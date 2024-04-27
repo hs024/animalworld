@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="website/public/static/style.css"> -->
+    <link rel="stylesheet" href="{% static 'webpage/style.css' %}"> 
+  
+
+    </head>
+<body>
+    <header>
+<nav>
+    <a href="">HOME</a>
+    <a href="">CONTACT</a>
+<a href="">INFO</a>
+</nav>
+
+    </header>
+
+
+    <div class="carousel  ">
+        <div class="list">
+    {% for name,des,img in ziplist %}
+<div class="item">
+    <img src="{% static 'webpage/' %}{{img}}" alt="nahi dikha sakta abhi" srcset="">
+<div class="content">
+<div class="author">Himanshu</div>
+<div class="title">Animals park</div>
+<div class="topic">{{name}}</div>
+<div class="des">
+{{des}}
+</div>
+<div class="buttons">
+    <button>SEE MORE</button>
+    <button>SUBSCRIBE</button>
+</div>
+
+</div>
+</div>
+{%endfor%}
+</div>
+
+<!-- thumbnail -->
+<div class="thumbnail">
+    {% for img,name in imgnamelist %}
+    <div class="item">
+        <img src="{% static 'webpage/'%}{{img}}" alt="" srcset="">
+        <div class="content">
+            <div class="title">
+                {{name}}
+            </div>
+            <!-- <div class="des">
+                {{des}}
+            </div> -->
+        </div>
+    </div>
+    {%endfor%}   
+</div>
+
+<!-- next prev -->
+
+<div class="arrows">
+    <button id="prev"><</button>
+    <button id="next">></button>
+</div>
+<!-- time running -->
+<div class="time"></div>
+</div>
+
+<script src="{% static 'webpage/script.js' %}"></script>
+</body>
+</html>
